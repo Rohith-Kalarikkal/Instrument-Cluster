@@ -279,19 +279,12 @@ void voltageFind() {
 
 void background() {
 
-//  u8g.setFont(u8g_font_fub30n);
-//  u8g.setFont(u8g_font_osb35n);
-//  u8g.drawStr(50, 35,"00"); //speed
-
   u8g.setFont(u8g_font_fub30n);
   u8g.setPrintPos(70-v, 35); 
   u8g.print((int)averageSpeed);
 
-//  u8g.setFont(u8g_font_fub11);
   u8g.setFont(u8g_font_profont15);
-//  u8g.drawStr(54, 56,"00000.0"); //odometer
-//  u8g.drawStr(5, 52,"000"); //Range
-  u8g.drawStr(5, 18,"00:00");//Time
+  u8g.drawStr(5, 18,"00:00");                     //Time
 
   u8g.drawLine(41,3,41,60);
   u8g.drawLine(5,32,41,32);
@@ -302,11 +295,10 @@ void background() {
   value3();
 
   u8g.setFont(u8g_font_chikita);
-//  u8g.setFont(u8g_font_profont12);
-  u8g.drawStr(97, 31,"km/h"); //speed
-  u8g.drawStr(110, 56,"km"); //odometer
-  u8g.drawStr(26, 52,"km"); //Range
-  u8g.drawStr(25,25,"pm"); //Time
+  u8g.drawStr(97, 31,"km/h");                     //speed
+  u8g.drawStr(110, 56,"km");                      //odometer
+  u8g.drawStr(26, 52,"km");                       //Range
+  u8g.drawStr(25,25,"pm");                        //Time
 //  u8g.drawStr(16,15,"RANGE");
 }
 
@@ -335,10 +327,8 @@ void Speed() {
   distance = (averageSpeed * Time * 5)/(1000 * 18);
   dist = dist + (distance/1000);  
   travelled = dist + lastdist;
-//  minus = travelled - prevtravelled; 
 
   range = range - (distance/1000);
-//  prevtravelled = travelled;
   
   if (range < 0) {range = 0;}
   if (travelled > 99999) { travelled = 0; }
@@ -398,8 +388,5 @@ void value3() {
   }
   else {
     u8g.drawStr(5, 52,"000"); //Range
-//    range = 0;
-//    u8g.setPrintPos(19, 52);
-//    u8g.print(range);
   }
 }
